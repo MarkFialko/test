@@ -1,7 +1,7 @@
-import express, {Express, Request, Response} from 'express';
+import express, {Express} from 'express';
 import dotenv from 'dotenv'
-import connection from "./connection";
-import router from "./router";
+import connection from "../connection";
+import router from "../router";
 
 dotenv.config()
 
@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000
 // parse body
 app.use(express.json());
 
-app.use('/api',router)
+app.use('/api', router)
 
 
 const start = async () => {
@@ -20,7 +20,7 @@ const start = async () => {
             .then(() => {
                 console.log('Connection has been established successfully')
             })
-            .catch((err)=> {
+            .catch((err) => {
                 console.log(`Unable to connect to the database: ${err}`)
             })
 
