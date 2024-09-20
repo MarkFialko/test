@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "@types/node": "^22.5.5",
+    "@types/validator": "^13.12.2"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.2.2",
+    "sequelize": "^6.37.3",
+    "sequelize-typescript": "^2.1.6"
+  }
+}
