@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000
 // parse body
 app.use(express.json());
 
-app.use('',(req,res)=> {
+app.use('/',(req,res)=> {
     res.send({
         message: 'hello'
     })
