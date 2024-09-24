@@ -29,7 +29,7 @@ class UserController {
 
     }
 
-    async get(request: Request, response: AppResponse<UserDto | UserDto[] | null>) {
+    async get(request: Request, response: AppResponse<{users: UserDto[] | [null]}>) {
         const query = request.query as Record<(keyof UserDto), undefined>
         const user_id = Number(request.params.user_id)
 
@@ -38,7 +38,9 @@ class UserController {
 
             return response.json({
                 success: !!users.length,
-                result: users
+                result: {
+                    users: users
+                }
             })
 
         }
@@ -47,7 +49,9 @@ class UserController {
 
         return response.json({
             success: !!user,
-            result: user
+            result: {
+                users: [user] as UserDto[]
+            }
         })
 
     }
