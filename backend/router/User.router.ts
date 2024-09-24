@@ -8,8 +8,8 @@ userRouter.post('/create', UserController.create);
 userRouter.get('/get/:user_id', UserController.get)
 userRouter.get('/get/', UserController.get)
 userRouter.patch('/update/:user_id', UserController.update)
-userRouter.delete('/:user_id', UserController.delete)
-userRouter.delete('/delete/', UserController.delete)
+userRouter.delete('/delete', UserController.delete)
+userRouter.delete('/delete/:user_id', UserController.delete)
 
 
 export default userRouter
